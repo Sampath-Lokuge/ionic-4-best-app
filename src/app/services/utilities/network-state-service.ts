@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Network } from "@ionic-native/network/ngx";
+import { ShowToastService } from './show-toast.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ export class NetworkStateService {
 
   private connectSubscription$: Subscription = null;
 
-  constructor(private network: Network, ) { }
+  constructor(private network: Network,
+    private showToastService: ShowToastService) { }
 
   WatchConnection() {
     if (this.connectSubscription$) { this.connectSubscription$.unsubscribe(); }

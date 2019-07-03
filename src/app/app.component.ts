@@ -10,7 +10,7 @@ import { NetworkStateService } from './services/utilities/network-state-service'
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  public appPages = [
+  appPages = [
     {
       title: 'Home',
       url: '/home',
