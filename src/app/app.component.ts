@@ -17,16 +17,16 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
+      title: 'Quotes',
+      url: '/quotes',
       icon: 'list'
     }
   ];
 
   constructor(private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private networkStateService: NetworkStateService) {
+              private splashScreen: SplashScreen,
+              private statusBar: StatusBar,
+              private networkStateService: NetworkStateService) {
     this.initializeApp();
   }
 
