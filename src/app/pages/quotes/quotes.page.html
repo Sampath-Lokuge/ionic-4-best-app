@@ -10,13 +10,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-  <!--   <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note color-blue" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item> -->
-  </ion-list>
+  <ion-card *ngFor="let q of quotes">
+    <ion-card-header>
+      <ion-card-title>{{q.author}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{q.quote}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

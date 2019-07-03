@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuotesService } from 'src/app/services/api/quotes.service';
+import { Quote } from 'src/app/models/quote';
+import { forEach, } from "lodash";
 
 @Component({
   selector: 'app-quotes',
@@ -7,20 +9,7 @@ import { QuotesService } from 'src/app/services/api/quotes.service';
   styleUrls: ['quotes.page.scss']
 })
 export class QuotesPage implements OnInit {
-  /*   selectedItem: any;
-    icons = [
-      'flask',
-      'wifi',
-      'wifi',
-      'football',
-      'basketball',
-      'paper-plane',
-      'american-football',
-      'boat',
-      'bluetooth',
-      'build'
-    ];
-    items: Array<{ title: string; note: string; icon: string }> = []; */
+  quotes: Quote[] = [];
 
   constructor(private quotesService: QuotesService) {
   }
@@ -30,8 +19,14 @@ export class QuotesPage implements OnInit {
   }
 
   init(): void {
-    this.quotesService.get('famous', 10).subscribe((res: any) => {
-      console.log(res);
+    this.quotesService.get('famous', 5).subscribe((res: any) => {
+      forEach(res, (q: any) => {
+        this.quotes.push({
+          quote: q.quote,
+          author: q.author
+        });
+      });
+      console.log(this.quotes);
     }, error => { console.log(error); });
   }
 
