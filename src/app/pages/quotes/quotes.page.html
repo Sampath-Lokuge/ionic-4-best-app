@@ -12,6 +12,7 @@
 <ion-content>
   <ion-card *ngFor="let q of quotes">
     <ion-card-header>
+      <ion-card-subtitle class="color-blue">{{date}}</ion-card-subtitle>
       <ion-card-title>{{q.author}}</ion-card-title>
     </ion-card-header>
 

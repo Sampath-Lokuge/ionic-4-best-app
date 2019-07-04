@@ -74,6 +74,9 @@
       "Page",
       "Component"
     ],
-    "directive-class-suffix": true
+    "directive-class-suffix": true,
+    "align": [
+      false
+    ]
   }
 }
