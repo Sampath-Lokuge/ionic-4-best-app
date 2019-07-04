@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{quote?.author}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{quote?.quote}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

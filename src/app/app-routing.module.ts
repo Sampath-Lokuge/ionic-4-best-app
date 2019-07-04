@@ -14,12 +14,12 @@ const routes: Routes = [
   },
   {
     path: 'quotes',
-    loadChildren: './pages/quotes/quotes.module#QuotesPageModule',
+    loadChildren: './pages/quotes/quotes/quotes.module#QuotesPageModule',
     canActivate: [AuthGuard]
   },
   {
     path: 'details',
-    loadChildren: './pages/details/details.module#DetailsPageModule',
+    loadChildren: './pages/quotes/details/details.module#DetailsPageModule',
     canActivate: [AuthGuard]
   },
   {

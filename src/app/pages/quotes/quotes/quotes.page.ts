@@ -4,6 +4,8 @@ import { Quote } from 'src/app/models/quote';
 import { forEach, } from 'lodash';
 import { LoadingService } from 'src/app/services/utilities/loading.service';
 import * as moment from 'moment';
+import { QuotesDataService } from 'src/app/services/data/quotes-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quotes',
@@ -15,7 +17,9 @@ export class QuotesPage implements OnInit {
   date: string = moment().format('dddd, MMMM Do YYYY');
 
   constructor(private quotesService: QuotesService,
-    private loadingService: LoadingService, ) {
+    private loadingService: LoadingService,
+    private quotesDataService: QuotesDataService,
+    private router: Router, ) {
   }
 
   ngOnInit() {
@@ -36,8 +40,9 @@ export class QuotesPage implements OnInit {
       () => { this.loadingService.dismissLoader(loading); });
   }
 
-  goToDetails(): void {
-
+  goToDetails(data: Quote): void {
+    this.quotesDataService.quote = data;
+    this.router.navigateByUrl('/details');
   }
 
 }

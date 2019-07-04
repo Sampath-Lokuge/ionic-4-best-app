@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { QuotesService } from 'src/app/services/api/quotes.service';
+import { QuotesDataService } from 'src/app/services/data/quotes-data.service';
+import { Quote } from 'src/app/models/quote';
+
 
 @Component({
   selector: 'app-details',
@@ -8,17 +10,16 @@ import { QuotesService } from 'src/app/services/api/quotes.service';
 })
 export class DetailsPage implements OnInit {
 
-  constructor(private quotesService: QuotesService) { }
+  constructor(private quotesDataService: QuotesDataService, ) { }
+
+  quote: Quote;
 
   ngOnInit() {
     this.init();
   }
 
   init(): void {
-    this.quotesService.get('famous', 10).subscribe((res: any) => {
-      console.log(res);
-    }, error => { console.log(error); });
+    this.quote = this.quotesDataService.quote;
   }
-
 
 }
