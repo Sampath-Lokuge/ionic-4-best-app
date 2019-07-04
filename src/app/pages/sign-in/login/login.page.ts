@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserInfo } from 'src/app/models/user-info';
+import { LocalStorageService } from 'src/app/services/utilities/local-storage.service';
+import { LocalStorage } from 'src/app/constants/local-storage';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +14,8 @@ export class LoginPage implements OnInit {
 
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
-              private router: Router) { }
+              private router: Router,
+              private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
     this.init();
@@ -24,10 +28,17 @@ export class LoginPage implements OnInit {
     });
   }
 
-  login() {
-    if (this.form.valid) {
-      this.router.navigateByUrl('/quotes');
-    }
+  async login() {
+    if (this.form.invalid) { return; }
+
+    const userInfo: UserInfo = {
+      email: this.form.value.email,
+      password: this.form.value.password
+    };
+
+    await this.localStorageService.set(LocalStorage.USER_INFO, userInfo);
+
+    this.router.navigateByUrl('/quotes');
   }
 
 }
