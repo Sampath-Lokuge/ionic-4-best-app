@@ -15,7 +15,9 @@ const routes: Routes = [
     path: 'quotes',
     loadChildren: './pages/quotes/quotes.module#QuotesPageModule'
   },
-  { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' }
+  { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' },
+  { path: 'login', loadChildren: './pages/sign-in/login/login.module#LoginPageModule' },
+  { path: 'signup', loadChildren: './pages/sign-in/signup/signup.module#SignupPageModule' }
 ];
 
 @NgModule({

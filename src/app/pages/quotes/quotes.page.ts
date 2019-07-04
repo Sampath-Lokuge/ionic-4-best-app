@@ -26,7 +26,6 @@ export class QuotesPage implements OnInit {
           author: q.author
         });
       });
-      console.log(this.quotes);
     }, error => { console.log(error); });
   }
 
