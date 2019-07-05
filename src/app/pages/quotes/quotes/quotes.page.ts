@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { QuotesService } from 'src/app/services/api/quotes.service';
-import { Quote } from 'src/app/models/quote';
 import { forEach, } from 'lodash';
 import { LoadingService } from 'src/app/services/utilities/loading.service';
 import * as moment from 'moment';
 import { QuotesDataService } from 'src/app/services/data/quotes-data.service';
 import { Router } from '@angular/router';
+import { Quote } from 'src/app/models/quote';
 
 @Component({
   selector: 'app-quotes',

@@ -18,10 +18,10 @@ export class ShowToastService {
     this.toast.present();
   }
 
-  async showNetworkStateSuccessToast(data: string) {
+  async showNetworkStateSuccessToast(data: string, duration = 3000) {
     const toast = await this.toastCtrl.create({
       message: data,
-      duration: 3000,
+      duration,
       position: 'bottom',
       color: 'success'
     });

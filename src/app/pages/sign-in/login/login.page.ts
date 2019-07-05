@@ -38,11 +38,13 @@ export class LoginPage implements OnInit {
       password: this.form.value.password
     };
 
-    /*  this.authenticationService.login(userInfo).subscribe(async (res: any) => {
-       await this.localStorageService.set(LocalStorage.USER_INFO, userInfo);
-       this.router.navigateByUrl('/quotes');
-     }, error => { console.log(error); },
-       () => { }); */
+    // here it shows how to get the data from API. Since I don't have login API I have commented out.
+
+    /* this.authenticationService.login(userInfo).subscribe(async (res: any) => {
+      await this.localStorageService.set(LocalStorage.USER_INFO, userInfo);
+      this.router.navigateByUrl('/quotes');
+    }, error => { console.log(error); },
+      () => { }); */
 
     await this.localStorageService.set(LocalStorage.USER_INFO, userInfo);
     this.router.navigateByUrl('/quotes');
