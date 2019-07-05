@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
       password: this.form.value.password
     };
 
-    // here it shows how to get the data from API. Since I don't have login API I have commented out.
+    // here it shows how to get the data from API. Since I don't have login API I have commented out it.
 
     /* this.authenticationService.login(userInfo).subscribe(async (res: any) => {
       await this.localStorageService.set(LocalStorage.USER_INFO, userInfo);
